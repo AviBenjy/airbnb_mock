@@ -23,12 +23,12 @@ class HomePage extends React.Component {
   
   render() {
     const {editorChoice} = this.state 
-         
+         // my change
     return (
       <Container>
         <Header/>
         <Wrapper>
-          <Modal></Modal>
+          {/* <Modal></Modal> */}
           <ListCities homes={editorChoice.slice(0, 5)}/>
           <ListHomes homes={editorChoice.slice(0, 8)} title='Editor Choice' />
         </Wrapper>
