@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import LogIn from '../components/Authentication/LogIn';
+import SignUp from '../components/Authentication/SignUp';
 
 const Modal = (props) => {
     return (
@@ -7,6 +9,7 @@ const Modal = (props) => {
             <InnerContainer>
                 {/* <Close>X</Close> */}
                 <CloseModal className="fas fa-times"/>
+                <LogIn></LogIn>
             </InnerContainer>
         </Container>
     )
@@ -19,6 +22,7 @@ const Container = styled.div`
     height: 100vh;
     background: rgba(0,0,0,0.5);
     position: fixed;
+    display: flex;
     top: 0;
     left:0;
     z-index: 1;
@@ -26,26 +30,16 @@ const Container = styled.div`
 
 const InnerContainer = styled.div`
     background-color: white;
-    display: block;
+    display: inline-block;
     margin: auto;
-    margin-top:10%;
-    width: 10px;
-    padding: 25px;
+    padding: 25px 40px;
     position: relative;
-`
-
-const Close = styled.div`
-    width:20px;
-    height:20px;
-    border-radius: 50%;
-    border: 2px black solid;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width:35%;
 `
 
 const CloseModal = styled.i`
     position: absolute;
+    cursor: pointer;
     top: 10px;
     left: 10px;
     font-size: 25px;
