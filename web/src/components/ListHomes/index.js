@@ -1,13 +1,14 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import CardHome from './CardHome'
+import CardHouse from './CardHome'
 
 
-const ListHouses = (props) => {
+function ListHomes(props) {
   
-  const {title, homes} = props
-  const cards = homes.map((home, i) => <CardHome key={home.id} {...home}/>)
-
+  const {homes, title} = props
+    
+  const cards = homes.map((home, i) => <CardHouse key={home._id} {...home}/>)
+  
   return (
     <div>
       <Title>{title}</Title>
@@ -16,11 +17,10 @@ const ListHouses = (props) => {
       </Container>
     </div>
   )
-  
 }
 
-export default ListHouses
 
+export default ListHomes
 
 const Container = styled.div`
     margin: 0 -8px;
@@ -32,20 +32,9 @@ const Container = styled.div`
 const Title = styled.h3`
     font-weight: 800;
     font-size: 24px;
-    line-height: 30px;
+    line-height: 60px;
     letter-spacing: normal;
     font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
     color: #484848;
     padding: 2px 0;
 `
-
-
-// const Container = styled.div`
-//     display: flex;
-//     flex-wrap: wrap;
-//     margin-top: 84px;
-// `
-
-// const Title = styled.h3`
-//   flex: 1 1 100%;
-// `

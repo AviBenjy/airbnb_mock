@@ -10,11 +10,11 @@ const CardHome = (props) => {
   const {type, title, price, images=[], id} = props
   
   return (
-    <Link css={st} to={`/home?id=${id}`}>
-      <Avatar imageUrl={images[0]||''}/>
-      <Text bold color={'#008489'}>{type}</Text>
-      <Text bold big color={'rgb(72, 72, 72)'}>{title}</Text>
-      <Text small color={'rgb(72, 72, 72)'}>${price} per night</Text>
+    <Link css={st} to={`/house/${id}`}>
+      <Avatar imageUrl={images[0]}/>
+      <Text small bold color={'rgb(0, 132, 137)'}>{type}</Text>
+      <Text big bold color={'rgb(72, 72, 72)'}>{title}</Text>
+      <Text color={'rgb(72, 72, 72)'}>${price} per night</Text>
     </Link>
   )
   
@@ -51,6 +51,6 @@ const Text = styled.span`
   flex: 0 0 auto;
   color: ${p => p.color};
   font-weight: ${p => p.bold ? '800' : 'inherit'};
-  font-size: ${p => p.big ? '17px' : p.small ? '12px' : 'inherit'};
+  font-size: ${p => p.big ? '17px' : p.small ? '12px' : '14px'};
 `
 

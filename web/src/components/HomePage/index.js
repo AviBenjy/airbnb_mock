@@ -28,7 +28,7 @@ class HomePage extends React.Component {
         <Header/>
         <Wrapper>
           <ListCities homes={editorChoice.slice(0, 5)}/>
-          <ListHomes homes={editorChoice} title='Editor Choice' />
+          <ListHomes homes={editorChoice.slice(0, 8)} title='Editor Choice' />
         </Wrapper>
       </Container>
     )
