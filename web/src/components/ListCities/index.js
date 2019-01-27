@@ -42,7 +42,7 @@ const List = styled.div`
 const Title = styled.h1`
     font-weight: 800;
     font-size: 24px;
-    line-height: 60px;
+    line-height: 30px;
     letter-spacing: normal;
     font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
     color: #484848;

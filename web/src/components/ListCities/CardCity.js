@@ -12,7 +12,7 @@ const CardCity = (props) => {
           <Info>
             <City>{address.city}</City>
             <Country>{address.country}</Country>
-            <AveragePrice>${price}/Night average</AveragePrice>
+            <AveragePrice>${price} / Night average</AveragePrice>
           </Info>
           <GradientLowerImage/>
         </Card>
@@ -22,7 +22,6 @@ const CardCity = (props) => {
 }
 
 export default CardCity
-
 
 
 const GradientLowerImage = styled.div`
