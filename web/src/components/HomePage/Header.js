@@ -52,26 +52,26 @@ class Header extends React.Component {
 
                             <SearchField css={{width: '25%', borderRadius: '5px 0 0 5px'}}>
                                 <FieldTitle> COUNTRY, CITY, ADDRESS </FieldTitle>
-                                <FieldInput ref={this.inputAddress} placeholder='France'/>
+                                <FieldInput name='country' onChange={e => this.onChange(e.target)} placeholder='France'/>
                             </SearchField>
 
                             <SearchField css={{width: '50%', display: 'flex'}}>
 
                                 <SearchField css={{width: '50%', padding: '0 20px 0 0', background: 'transparent'}}>
                                     <FieldTitle> CHECK IN </FieldTitle>
-                                    <FieldInput type='date' ref={this.inputCheckIn} placeholder='dd/mm/yyyy' />
+                                    <FieldInput type='date' name='checkIn' onChange={e => this.onChange(e.target)} placeholder='dd/mm/yyyy' />
                                 </SearchField>
 
                                 <SearchField css={{width: '50%', padding: '0 0 0 20px', background: 'transparent', border: 'none'}}>
                                     <FieldTitle> CHECK OUT </FieldTitle>
-                                    <FieldInput type='date' ref={this.inputCheckOut} placeholder='dd/mm/yyyy'/>
+                                    <FieldInput type='date' name='checkOut' onChange={e => this.onChange(e.target)} placeholder='dd/mm/yyyy'/>
                                 </SearchField>
 
                             </SearchField>
 
                             <SearchField css={{width: '25%', borderRadius: '0 5px 5px 0'}}>
                                 <FieldTitle> GUESTS </FieldTitle>
-                                <FieldInput ref={this.inputGuests} placeholder='1'/>
+                                <FieldInput name='guests' onChange={e => this.onChange(e.target)} placeholder='1'/>
                             </SearchField>
 
                         </SearchFields>
