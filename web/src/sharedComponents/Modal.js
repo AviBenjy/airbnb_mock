@@ -9,7 +9,8 @@ const Modal = (props) => {
             <InnerContainer>
                 {/* <Close>X</Close> */}
                 <CloseModal className="fas fa-times"/>
-                <LogIn></LogIn>
+                {/* <LogIn></LogIn> */}
+                <SignUp></SignUp>
             </InnerContainer>
         </Container>
     )

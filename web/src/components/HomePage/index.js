@@ -23,7 +23,6 @@ class HomePage extends React.Component {
   
   render() {
     const {editorChoice} = this.state 
-         
     return (
       <Container>
         <Header/>
