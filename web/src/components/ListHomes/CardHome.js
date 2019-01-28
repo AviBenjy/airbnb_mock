@@ -4,11 +4,10 @@ import styled from '@emotion/styled'
 import {css, jsx} from '@emotion/core'
 
 
-
 const CardHome = (props) => {
 
   const {type, title, price, images=[], id} = props
-  
+
   return (
     <Link css={st} to={`/home?id=${id}`}>
       <Avatar imageUrl={images[0]||''}/>

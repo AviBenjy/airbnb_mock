@@ -1,25 +1,34 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import CardCity from './CardCity'
+import CardHolder from '../../sharedComponents/CardHolder'
 
 
 const ListCities = (props) => {
     const {homes} = props
-    const cards = homes.map( home => (
-        <CardWrapper key={home.id}>
+    let key = 0
+    const cards = homes.map( (home) => (
+        <CardWrapper key={key++}>
             <CardCity {...home} />
         </CardWrapper>
     ))
-    return (
-    <div>
-        <Title>Recommended for you</Title>
-        <Container>
-            <List>
-                {cards}
-            </List>
-        </Container>
-    </div>
-    )
+      
+    const holder = new Array(5).fill(0).map(() => (
+        <CardWrapper key={key++}>
+            <CardHolder />
+        </CardWrapper>
+    ))
+    
+      return (
+        <div>
+            <Title>Recommended for you</Title>
+            <Container>
+                <List>
+                    {(homes.length > 0 &&  cards) || holder}
+                </List>
+            </Container>
+        </div>
+      )
 }   
 
 
@@ -51,6 +60,7 @@ const Title = styled.h1`
 
 const CardWrapper = styled.div`
     width: 19%;
+    position: relative;
 `
 
     
