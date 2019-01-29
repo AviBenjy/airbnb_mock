@@ -1,11 +1,10 @@
 import React from 'react'
 
 import api from '../../api'
-import parseUrlQuery from '../../utils/parseUrlQuery'
 
 import HouseMainInfo from './HouseMainInfo'
 import HouseReview from './HouseReview'
-import BookHouseScheduler from './BookHouseScheduler'
+import BookingHome from './BookingHome'
 import Amenities from './Amenities'
 import styled from '@emotion/styled'
 import Gallery from './Gallery'
@@ -20,15 +19,14 @@ class HomeDetails extends React.Component {
   }
 
   async componentDidMount() {
-    // const query = parseUrlQuery(this.props.location.search)
-    const home = await api.querySearch(this.props.location.search)    
+    const home = await api.queryHome(this.props.location.search)    
     this.setState({home})
   }
 
   render() {
     const {home} = this.state
     const {amenities, reviews} = home
-
+    
     return (
       <div>
         <Nav/>
@@ -36,12 +34,12 @@ class HomeDetails extends React.Component {
         <Wrapper>
           <MainContent>
             <HouseMainInfo {...home}/>
-            <Amenities amenities={amenities || [{}]}/>
+            <Amenities amenities={amenities || {}}/>
             <Rating reviews={reviews}/>
             {reviews && reviews.map((review, i) => <HouseReview key={i} {...review}/>)}
             <NeighborhoodMap />
           </MainContent>
-          <BookHouseScheduler {...home}/>
+          <BookingHome {...home}/>
         </Wrapper>
       </div>
     )

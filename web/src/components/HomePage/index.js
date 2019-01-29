@@ -6,8 +6,6 @@ import api from '../../api'
 import Header from './Header'
 import ListCities from '../ListCities'
 import ListHomes from '../ListHomes'
-import Modal from '../../sharedComponents/Modal';
-
 
 
 class HomePage extends React.Component {
@@ -17,6 +15,8 @@ class HomePage extends React.Component {
   }
 
   async componentDidMount() {
+    if(this.state.editorChoice.length) return
+
     const editorChoice = await api.editorChoice()
     this.setState({editorChoice})
   }
@@ -27,7 +27,6 @@ class HomePage extends React.Component {
       <Container>
         <Header/>
         <Wrapper>
-          {/* <Modal></Modal> */}
           <ListCities homes={editorChoice.slice(0, 5)}/>
           <ListHomes homes={editorChoice.slice(0, 8)} title='Editor Choice' />
         </Wrapper>

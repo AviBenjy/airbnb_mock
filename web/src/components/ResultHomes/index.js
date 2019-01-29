@@ -14,7 +14,7 @@ class ResultHomes extends React.Component {
   }
 
   async componentDidMount() {
-    const homes = await api.querySearch(this.props.location.search)
+    const homes = await api.queryHomes(this.props.location.search)
     this.setState({homes})
   }
 
