@@ -1,11 +1,10 @@
 import React from 'react'
 
 import api from '../../api'
-import parseUrlQuery from '../../utils/parseUrlQuery'
 
 import HouseMainInfo from './HouseMainInfo'
 import HouseReview from './HouseReview'
-import BookHouseScheduler from './BookHouseScheduler'
+import BookingHome from './BookingHome'
 import Amenities from './Amenities'
 import styled from '@emotion/styled'
 import Gallery from './Gallery'
@@ -41,7 +40,7 @@ class HomeDetails extends React.Component {
             {reviews && reviews.map((review, i) => <HouseReview key={i} {...review}/>)}
             <NeighborhoodMap />
           </MainContent>
-          <BookHouseScheduler {...home}/>
+          <BookingHome {...home}/>
         </Wrapper>
       </div>
     )
