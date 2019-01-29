@@ -6,10 +6,11 @@ import {css, jsx} from '@emotion/core'
 
 const CardHome = (props) => {
 
-  const {type, title, price, images=[], id} = props
-
+  const {type, title, price, images=[], _id} = props
+  /* _id['$oid'] send mongoDB id */
+  const id = _id['$oid']
   return (
-    <Link css={st} to={`/home?id=${id}`}>
+    <Link css={st} to={`/home?id=${id}`}> 
       <Avatar imageUrl={images[0]||''}/>
       <Text bold color={'#008489'}>{type}</Text>
       <Text bold big color={'rgb(72, 72, 72)'}>{title}</Text>

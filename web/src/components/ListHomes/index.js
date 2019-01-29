@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 
-import CardHouse from './CardHome'
+import CardHome from './CardHome'
 import CardHolder from '../../sharedComponents/CardHolder'
 
 
@@ -9,7 +9,7 @@ function ListHomes(props) {
   
   const {homes, title} = props
     
-  const cards = homes.map((home, i) => <CardHouse key={home.id} {...home}/>)
+  const cards = homes.map((home, i) => <CardHome key={home._id['$oid']} {...home}/>)
 
   const holder = new Array(15).fill(0).map((n, i) => <CardWrapper key={i}><CardHolder/></CardWrapper> )
   

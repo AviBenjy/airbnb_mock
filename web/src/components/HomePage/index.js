@@ -15,11 +15,10 @@ class HomePage extends React.Component {
   }
 
   async componentDidMount() {
+    if(this.state.editorChoice.length) return
+
     const editorChoice = await api.editorChoice()
-    // just for testing the card holder
-    setTimeout(() => {
-      this.setState({editorChoice})
-    }, 2000)
+    this.setState({editorChoice})
   }
   
   render() {

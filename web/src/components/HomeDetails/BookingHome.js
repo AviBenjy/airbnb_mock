@@ -40,6 +40,7 @@ class BookingHome extends React.Component {
 
   handleCheckOut = (checkOut) => {
     const {checkIn} = this.state
+
     if(checkIn.getTime() >= checkOut.getTime()) {
       alert('Must choose a valid check out')
       return
@@ -173,12 +174,6 @@ const DatePickers = styled.div`
     border: 1px solid #e4e4e4;
     border-radius: 4px;
 `
-
-// const DatePicker = styled.input`
-//     border: none;
-//     width:50%;
-//     padding: 8px 10px;
-// `
 
 const StarRating = styled.div`
     border-bottom: 1px solid #e4e4e4;

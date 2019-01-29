@@ -24,7 +24,7 @@ const ListCities = (props) => {
             <Title>Recommended for you</Title>
             <Container>
                 <List>
-                    {(homes.length > 0 &&  cards) || holder}
+                    {(homes.length &&  cards) || holder}
                 </List>
             </Container>
         </div>
