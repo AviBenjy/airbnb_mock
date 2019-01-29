@@ -10,8 +10,8 @@ const Amenities = (props) => {
         <AmenitiesContainer>
             <Subject>Amenities</Subject>
             <AmenitiesList>
-                {Object.keys(amenities[0]).map(function(amenity, i) {
-                    if(amenities[0][amenity]) {
+                {Object.keys(amenities).map(function(amenity, i) {
+                    if(amenities[amenity]) {
                         return  (
                             <Amenity key={i}>
                                 <IconAvailable className={determineIcon(amenity)}></IconAvailable>
