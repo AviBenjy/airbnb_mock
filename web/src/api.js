@@ -6,7 +6,6 @@ import parseUrlQuery from './utils/parseUrlQuery'
 
 async function editorChoice() {
   try {
-    console.log('fetch', API_BASE_URL+'/editorchoice')
     const editorChoice = await fetch(API_BASE_URL+'/editorchoice').then(res => res.json())
     return editorChoice
   } catch (error) {
@@ -17,15 +16,12 @@ async function editorChoice() {
 
 
 async function queryHome(query) {
-  console.log('queryHome', query);
-  
   try {
     const result = await fetch(
       `${API_BASE_URL}/home${query}`,
       {
         method: 'GET',
-      }
-      )
+      })
     .then(res => res.json())
     
     return result
@@ -37,7 +33,6 @@ async function queryHome(query) {
 
 
 async function queryHomes(query) {
-  console.log('query homes', query);
   
   try {
     const houses = await fetch(
@@ -53,9 +48,31 @@ async function queryHomes(query) {
 }
 
 
+async function signUp(name, email, password) {
+  console.log('fetch sign up', JSON.stringify({email, name, password}))
+  
+  try {
+    const result = await fetch(
+      `${API_BASE_URL}/auth/signup`,
+      {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({email, name, password})
+      })
+    .then(res => res.json())
+    
+    return result
+  } catch (error) {
+    console.log('api error signUp', error)
+    return {}
+  }
+}
+
+
 
 export default {
   editorChoice,
   queryHome,
-  queryHomes
+  queryHomes,
+  signUp
 }

@@ -1,16 +1,35 @@
-import React from 'react';
-import styled from '@emotion/styled';
+import React from 'react'
+import styled from '@emotion/styled'
 
-const SignUp = (props) => {
+import api from '../../api'
+
+
+
+class SignUp extends React.Component {
+  constructor(props) {
+    super(props)
+    this.inputEmail = React.createRef()
+    this.inputName = React.createRef()
+    this.inputPassword = React.createRef()
+  }
+  handleSubmit = () => {
+    const email = this.inputEmail.current.value
+    const name = this.inputName.current.value
+    const password = this.inputPassword.current.value
+    api.signUp(name, email, password)
+  }
+
+  render() {
     return (
-        <Container>
-            <Title>Please enter your details</Title>
-            <Input placeholder="Email address"></Input>
-            <Input placeholder="Full name"></Input>
-            <Input placeholder="Password"></Input>
-            <Button>Sign up</Button>
-        </Container>
+      <Container>
+        <Title>Please enter your details</Title>
+        <Input ref={this.inputEmail} placeholder="Email address"></Input>
+        <Input ref={this.inputName} placeholder="Full name"></Input>
+        <Input ref={this.inputPassword} placeholder="Password"></Input>
+        <Button onClick={this.handleSubmit}>Sign up</Button>
+      </Container>
     )
+  }
 }
 
 export default SignUp;
