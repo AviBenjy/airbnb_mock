@@ -12,9 +12,9 @@ const CardHome = (props) => {
   return (
     <Link css={st} to={`/home?id=${id}`}>
       <Avatar imageUrl={images[0]||''}/>
-      <Text bold color={'#008489'}>{type}</Text>
-      <Text bold big color={'rgb(72, 72, 72)'}>{title}</Text>
-      <Text small color={'rgb(72, 72, 72)'}>${price} per night</Text>
+      <Text small bold color={'rgb(0, 132, 137)'}>{type}</Text>
+      <Text big bold color={'rgb(72, 72, 72)'}>{title}</Text>
+      <Text color={'rgb(72, 72, 72)'}>${price} per night</Text>
     </Link>
   )
   
@@ -32,8 +32,9 @@ const st = css`
   line-height: 1.4;
   transition: 0.5s;
   &:hover {
-    text-decoration: none;
+    text-decoration: none;  
     transform: scale(1.03);
+    
   }
 `
 
