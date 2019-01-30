@@ -18,7 +18,7 @@ export default Gallery;
 const Container = styled.div`
     position: relative;
     display: flex;
-    margin-top:100px;
+    margin-top: 80px;
 `
 
 const ImageContainer = styled.div`

@@ -41,4 +41,6 @@ const Container = styled.div`
 
 const Body = styled.div`
   padding: 30px;
+  position: relative;
+  margin-top: 55px;
 `
