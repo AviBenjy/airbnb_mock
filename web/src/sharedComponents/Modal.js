@@ -4,13 +4,12 @@ import LogIn from '../components/Authentication/LogIn';
 import SignUp from '../components/Authentication/SignUp';
 
 const Modal = (props) => {
+    const {content, onClose} = props
     return (
         <Container>
             <InnerContainer>
-                {/* <Close>X</Close> */}
-                <CloseModal className="fas fa-times"/>
-                {/* <LogIn></LogIn> */}
-                <SignUp></SignUp>
+                <CloseModal onClick={onClose} className="fas fa-times"/>
+                {content}
             </InnerContainer>
         </Container>
     )
@@ -43,6 +42,6 @@ const CloseModal = styled.i`
     cursor: pointer;
     top: 10px;
     left: 10px;
-    font-size: 25px;
+    font-size: 18px;
     color: rgb(118, 118, 118);
 `
